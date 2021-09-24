@@ -1,9 +1,9 @@
 import streamlit as st
 import tensorflow as tf
 import pandas as pd
-# from clean import token_word
+from clean import token_word
 # import sarcasm_e2e
-import sarcasm_e2e
+# import sarcasm_e2e
 
 
 MAX_LENGTH = 25
@@ -15,7 +15,7 @@ def load_model():
 
 def predict_sarcasm(text):
     x_final = pd.DataFrame({"headline":[text]})
-    test_lines = sarcasm_e2e.token_word(x_final)
+    test_lines = token_word(x_final)
     tokenizer_obj = tf.keras.preprocessing.text.Tokenizer()
     tokenizer_obj.fit_on_texts(test_lines)
     test_sequences = tokenizer_obj.texts_to_sequences(test_lines)
