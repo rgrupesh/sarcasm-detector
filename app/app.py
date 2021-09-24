@@ -31,6 +31,7 @@ def predict_sarcasm(text):
 
 
 def main():
+
     st.title("Sarcasm detector")
 
     with st.form(key='sarcasm_form'):
@@ -51,7 +52,7 @@ def main():
             with col1:
                 st.success("Your input")
                 st.write(raw_text)
-                st.success("prediction")
+                st.success("Prediction")
                 st.write(prediction)
 
             with col2:
