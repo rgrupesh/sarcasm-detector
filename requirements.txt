@@ -2,5 +2,4 @@ streamlit
 tensorflow-cpu
 pandas
 regex
-nltk.download('punkt')
-nltk.download('stopwords')
+nltk
