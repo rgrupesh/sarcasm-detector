@@ -8,7 +8,7 @@ MAX_LENGTH = 25
 
 
 def load_model():
-    loaded_model = tf.keras.models.load_model('../models/my_model.h5')
+    loaded_model = tf.keras.models.load_model('models/my_model.h5')
     return loaded_model
 
 
@@ -24,13 +24,19 @@ def predict_sarcasm(text):
     pred = model.predict(test_review_pad)
     predict_sarcasm.probab = pred
     if pred[0][0] >= 0.5:
-        st.image('../static/images/bazinga.jpg', width=200, caption="Shelly")
+        st.image('static/images/bazinga.jpg', width=200, caption="Shelly")
         return "It's a sarcasm!"
     else:
         return "It's not a sarcasm."
 
 
 def main():
+
+    st.sidebar.title("Created By:")
+    st.sidebar.subheader("Rupesh Gelal")
+    st.sidebar.subheader(
+        "[GitHub Repository](https://github.com/rgrupesh/sarcasm-detector)")
+    st.sidebar.subheader("[Personal Site](https://rupeshgelal.com.np/)")
 
     st.title("Sarcasm detector")
 
@@ -60,8 +66,8 @@ def main():
                 st.write(float(predict_sarcasm.probab))
 
     st.subheader("Sample prediction:")
-    st.info("You broke my laptop. Thank you!  \n-sarcastic    \n  \nHi, I’m Chandler. I make jokes when I’m uncomfortable.  \n-sarcastic")
-    st.info(
+    st.success("You broke my laptop. Thank you!  \n-sarcastic    \n  \nHi, I’m Chandler. I make jokes when I’m uncomfortable.  \n-sarcastic")
+    st.success(
         "You saved my dog.    \n-not sarcastic  \n  \nSarcasm is easy.  \n-not sarcastic")
 
 
