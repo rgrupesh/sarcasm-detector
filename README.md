@@ -1,6 +1,6 @@
 # sarcasm-detector
 
-Web app that detects sarcasm with around 80% accuracy.
+Web app that detects sarcasm with—around—80% accuracy.
 
 **LINK:** https://detect-sarcasm.herokuapp.com/
 
